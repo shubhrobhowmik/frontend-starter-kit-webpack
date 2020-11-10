@@ -59,6 +59,21 @@ const base = {
             }
           }
         ]
+      },
+      {
+        test: /\.js$/i,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env'],
+              plugins: [
+                ['@babel/plugin-proposal-class-properties', { loose: true }]
+              ]
+            }
+          }
+        ]
       }
     ]
   },
@@ -100,7 +115,25 @@ const prod = {
         }
       }),
       new CssMinimizerPlugin()
-    ]
+    ],
+    splitChunks: {
+      chunks: 'all',
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name(module) {
+            // get the name. E.g. node_modules/packageName/not/this/part.js
+            // or node_modules/packageName
+            const packageName = module.context.match(
+              /[\\/]node_modules[\\/](.*?)([\\/]|$)/
+            )[1];
+
+            // npm package names are URL-safe, but some servers don't like @ symbols
+            return `${packageName.replace('@', '')}`; // npm.
+          }
+        }
+      }
+    }
   },
   plugins: [new ImageminPlugin()]
 };

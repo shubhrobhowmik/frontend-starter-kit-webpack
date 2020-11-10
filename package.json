@@ -5,6 +5,7 @@
   "scripts": {
     "prestart": "npm run lint:fix && npm run format:fix",
     "start": "cross-env NODE_ENV=development webpack serve",
+    "prebuild": "npm run lint:fix && npm run format:fix",
     "build": "cross-env NODE_ENV=production webpack",
     "lint": "eslint **/*.js",
     "lint:fix": "eslint **/*.js --fix",
@@ -28,6 +29,11 @@
   },
   "homepage": "https://github.com/shubhrobhowmik/frontend-starter-kit-webpack#readme",
   "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "cross-env": "^7.0.2",
     "css-loader": "^5.0.1",
@@ -60,5 +66,8 @@
   "lint-staged": {
     "*.js": "eslint --fix",
     "*.{js,css,md}": "prettier --write"
+  },
+  "dependencies": {
+    "lodash": "^4.17.20"
   }
 }

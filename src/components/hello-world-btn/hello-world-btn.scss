@@ -1,0 +1,21 @@
+$btn-color: red;
+$para-color: blue;
+
+.hw-btn {
+  padding: 5px;
+  margin-top: 20px;
+  background-color: $btn-color;
+  color: white;
+  font-weight: 600;
+
+  &:hover {
+    cursor: pointer;
+    color: $btn-color;
+    background-color: #fff;
+  }
+}
+
+.hw-para {
+  color: $para-color;
+  font-size: 120%;
+}

@@ -20,13 +20,19 @@ $primary-color: green;
 }
 
 body {
+  margin: 0 auto;
   color: $primary-color;
-  margin: 0;
   padding: 20px;
+  text-align: center;
 }
 
 .new-font {
   font-family: 'montserratbold', sans-serif;
+}
+
+.img-banner {
+  width: 50%;
+  height: 50%;
 }
 
 .banner {
