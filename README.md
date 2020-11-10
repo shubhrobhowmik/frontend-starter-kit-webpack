@@ -2,7 +2,7 @@
 
 Frontend projects starter kit with webpack. This is a simple project for creating a development setup with webpack and also for creating production ready builds.
 
-![demo](https://raw.githubusercontent.com/bchiang7/octoprofile/master/static/og.png)
+![demo](https://github.com/shubhrobhowmik/frontend-starter-kit-webpack/blob/master/src/assets/images/screenshot-1.PNG)
 
 ### Tools used to build this starter-kit
 
