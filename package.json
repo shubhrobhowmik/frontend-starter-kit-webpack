@@ -11,6 +11,8 @@
     "lint:fix": "eslint **/*.js --fix",
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -27,7 +29,7 @@
   "bugs": {
     "url": "https://github.com/shubhrobhowmik/frontend-starter-kit-webpack/issues"
   },
-  "homepage": "https://github.com/shubhrobhowmik/frontend-starter-kit-webpack#readme",
+  "homepage": "https://github.com/shubhrobhowmik/frontend-starter-kit-webpack/",
   "devDependencies": {
     "@babel/core": "^7.12.3",
     "@babel/plugin-proposal-class-properties": "^7.12.1",
