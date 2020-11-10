@@ -10,6 +10,7 @@ Frontend projects starter kit with webpack. This is a simple project for creatin
 - [Babel](https://babeljs.io/docs/en/)
 - [ESLint](https://eslint.org/docs/user-guide/getting-started)
 - [Prettier](https://prettier.io/docs/en/install.html)
+- [GitHub Pages](https://shubhrobhowmik.github.io/frontend-starter-kit-webpack/)
 
 ### To run in local
 
