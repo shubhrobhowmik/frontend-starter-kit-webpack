@@ -3,15 +3,18 @@ $primary-color: green;
 @font-face {
   font-family: 'montserratbold';
   src: url('./assets/fonts/Montserrat/Montserrat-Bold.ttf') format('truetype'),
-    url('./assets/fonts/Montserrat/Montserrat-BoldItalic.ttf') format('truetype');
+    url('./assets/fonts/Montserrat/Montserrat-BoldItalic.ttf')
+      format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'montserratregular';
-  src: url('./assets/fonts/Montserrat/Montserrat-Regular.ttf') format('truetype'),
-    url('./assets/fonts/Montserrat/Montserrat-RegularItalic.ttf') format('truetype');
+  src: url('./assets/fonts/Montserrat/Montserrat-Regular.ttf')
+      format('truetype'),
+    url('./assets/fonts/Montserrat/Montserrat-RegularItalic.ttf')
+      format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -31,6 +34,6 @@ body {
   // background-size: cover;
   // background-position: center;
   // background-repeat: no-repeat;
-  // min-height: 100vh;
+  min-height: 100vh;
   // min-width: 100vh;
 }

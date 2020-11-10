@@ -14,12 +14,12 @@ const BUILD_DIR = path.resolve(__dirname, './dist');
 
 const base = {
   entry: {
-    main: path.join(SRC_DIR, 'index.js'),
+    main: path.join(SRC_DIR, 'index.js')
   },
   output: {
     filename: IS_DEV ? '[name].bundle.js' : '[name].[contenthash].bundle.js',
     path: BUILD_DIR,
-    publicPath: '',
+    publicPath: ''
   },
   // devtool: IS_DEV ? 'eval' : 'cheap-module-source-map',
   module: {
@@ -28,11 +28,11 @@ const base = {
         test: /\.s?css$/i,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader,
+            loader: MiniCssExtractPlugin.loader
           },
           'css-loader',
-          'sass-loader',
-        ],
+          'sass-loader'
+        ]
       },
       {
         test: /\.(jpeg|jpg|png|gif|svg|ico)$/,
@@ -42,10 +42,10 @@ const base = {
             options: {
               limit: 8192,
               name: '[name].[ext]',
-              outputPath: './assets/images/',
-            },
-          },
-        ],
+              outputPath: './assets/images/'
+            }
+          }
+        ]
       },
       {
         test: /\.(woff|woff2|ttf)$/,
@@ -55,23 +55,23 @@ const base = {
             options: {
               limit: 8192,
               name: '[name].[ext]',
-              outputPath: './assets/fonts/',
-            },
-          },
-        ],
-      },
-    ],
+              outputPath: './assets/fonts/'
+            }
+          }
+        ]
+      }
+    ]
   },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: path.join(SRC_DIR, 'index.html'),
+      template: path.join(SRC_DIR, 'index.html')
     }),
     new MiniCssExtractPlugin({
-      filename: IS_DEV ? 'style.css' : 'style.[contenthash].css',
-    }),
-  ],
+      filename: IS_DEV ? 'style.css' : 'style.[contenthash].css'
+    })
+  ]
 };
 
 const dev = {
@@ -80,10 +80,10 @@ const dev = {
   devServer: {
     overlay: true,
     port: 3000,
-    compress: true,
+    compress: true
     // hot: true
     // contentBase: BUILD_DIR
-  },
+  }
 };
 
 const prod = {
@@ -96,13 +96,13 @@ const prod = {
         terserOptions: {
           compress: {
             // drop_console: true
-          },
-        },
+          }
+        }
       }),
-      new CssMinimizerPlugin(),
-    ],
+      new CssMinimizerPlugin()
+    ]
   },
-  plugins: [new ImageminPlugin()],
+  plugins: [new ImageminPlugin()]
 };
 
 module.exports = IS_DEV ? merge(base, dev) : merge(base, prod);
